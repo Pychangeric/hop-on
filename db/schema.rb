@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_07_150550) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_07_151923) do
   create_table "houses", force: :cascade do |t|
-    t.string "name"
     t.string "location"
-    t.text "description"
+    t.string "description"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "per_night"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
     t.integer "rating"
-    t.integer "house_id", null: false
+    t.string "content"
     t.integer "user_id", null: false
+    t.integer "house_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["house_id"], name: "index_reviews_on_house_id"
@@ -33,14 +35,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_150550) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "avatar"
+    t.string "username"
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "visits", force: :cascade do |t|
-    t.date "start_date"
-    t.date "end_date"
+    t.string "end_date"
+    t.string "start_date"
     t.integer "house_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false

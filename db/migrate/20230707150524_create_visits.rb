@@ -1,8 +1,8 @@
-class CreateVisits < ActiveRecord::Migration[7.0]
+class CreateVisits < ActiveRecord::Migration[6.1]
   def change
     create_table :visits do |t|
-      t.date :start_date
-      t.date :end_date
+      t.string :end_date
+      t.string :start_date
       t.references :house, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 
