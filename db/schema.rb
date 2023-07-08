@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_07_151923) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_08_171053) do
   create_table "houses", force: :cascade do |t|
     t.string "location"
     t.string "description"
@@ -43,12 +43,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_07_151923) do
   end
 
   create_table "visits", force: :cascade do |t|
-    t.string "end_date"
     t.string "start_date"
     t.integer "house_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "end_date"
     t.index ["house_id"], name: "index_visits_on_house_id"
     t.index ["user_id"], name: "index_visits_on_user_id"
   end

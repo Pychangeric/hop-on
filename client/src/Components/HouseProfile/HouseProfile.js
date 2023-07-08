@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import { useParams, Link } from 'react-router-dom'
-import Rating from '@mui/material/Rating'
-import DateRangePicker from '@wojtekmaj/react-daterange-picker'
 import './HouseProfile.css'
 
 function HouseProfile({ user }) {
     const [house, setHouse] = useState({})
     const { id } = useParams()
-    const [value, onChange] = useState([new Date(), new Date()]);
+    const [value, ] = useState([new Date(), new Date()]);
     const {image, name, location, description, avg_rating, reviews} = house
     console.log('name: ', name);
     
@@ -124,7 +122,6 @@ function HouseProfile({ user }) {
             <div className='information'>
                 <div className='pic-and-Stars'>
                     <img className="img" src={image} alt={name}></img>
-                    <p>{ avg_rating ? <Rating value={avg_rating} readOnly /> : null }</p>
                 </div>
                 <div className='details'>
                     <h1>{location}</h1>
@@ -136,23 +133,13 @@ function HouseProfile({ user }) {
                         <h1> Recent Reviews</h1>
                         {reviews ? reviews.slice(-3).map(rev => {
                             return(
-                                <h3><span className='rev-stars'>{avg_rating ? <Rating value={avg_rating} readOnly /> : null}</span> {rev.content}</h3>
+                                <h3><span className='rev-stars'>{avg_rating ? < readOnly /> : null}</span> {rev.content}</h3>
                             ) 
                         }) : null }
                 </div> 
                 <div className='book-visit'>
                     <h1>Book Visit</h1>
-                    <DateRangePicker
-                        calendarAriaLabel="Toggle calendar"
-                        clearAriaLabel="Clear value"
-                        dayAriaLabel="Day"
-                        monthAriaLabel="Month"
-                        nativeInputAriaLabel="Date"
-                        onChange={onChange}
-                        value={value}
-                        yearAriaLabel="Year"
-                        format='y-MM-dd'
-                    />
+                    
                 <Link to={`/myvisits`}>
                     <button onClick={handleBooking}>Book Now!</button>
                 </Link>
