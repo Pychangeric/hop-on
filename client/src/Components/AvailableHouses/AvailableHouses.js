@@ -24,19 +24,19 @@ function AvailableHouses({houses, setSelectedState, selectedState}) {
             </div>
             <div className='selector-div'>
                 <label>
-                Select State:
+                Select place:
                 <select name='state' onChange={(e) =>{ setSelectedState(e.target.value) }} value={selectedState} >
                 <option value='All'>All</option>
-                    <option value='Alaska'>Alaska</option>
-                    <option value='California'>California</option>
-                    <option value='Colorado'>Colorado</option>
+                    <option value='samburu'>samburu</option>
+                    <option value='Nakuru'>Nakuru</option>
+                    <option value='kawangware'>kawangware</option>
                     <option value='Florida'>Florida</option>
-                    <option value='Illinios'>Illinios</option>
-                    <option value='Montana'>Montana</option>
+                    <option value='masai mara'>masai mara</option>
+                    <option value='Greece'>Greece</option>
                     <option value='New York'>New York</option>
-                    <option value='Texas'>Texas</option>
+                    <option value='Bali'>Bali</option>
                     <option value='Utah'>Utah</option>
-                    <option value='Washington'>Washington</option>
+                    <option value='Watamu'>Watamu</option>
                 </select>
                 </label>
             </div>

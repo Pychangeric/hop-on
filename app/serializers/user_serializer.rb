@@ -1,3 +1,3 @@
-class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :avatar, :username
+class VisitSerializer < ActiveModel::Serializer
+  attributes :id, :start_date, :end_date, :house_id, :user_id
 end

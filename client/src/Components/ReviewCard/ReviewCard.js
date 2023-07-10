@@ -12,8 +12,6 @@
 // export default ReviewCard;
 
 import React, { useState } from "react";
-import Paper from '@mui/material/Paper'
-import Rating from '@mui/material/Rating'
 
 function ReviewCard({
   review,
@@ -38,7 +36,6 @@ return (
     <div className="review-card-outer-div">
       <h3>{content}</h3>
       {/* <h3>{star_rating}</h3> */}
-      <Rating value={rating} readOnly />
       {/* <button className="btnEdit" onClick={() => setDisplayEdit(!displayEdit)}>edit</button>
       <button className="btnDelete" onClick={() => deleteReview(review)}>delete</button> */}
       {displayEdit ? (
