@@ -26,7 +26,7 @@ function ReviewForm({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`/reviews`, configObjPOST)
+    fetch(`http://127.0.0.1:3000/reviews`, configObjPOST)
       .then((res) => res.json())
       .then((data) => {
         setStarInput(" ");

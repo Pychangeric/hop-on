@@ -17,7 +17,7 @@ function App() {
   const [selectedState, setSelectedState] = useState('All')
 
   useEffect(() => {
-    fetch('/authorized_user')
+    fetch('http://127.0.0.1:3000/authorized_user')
     .then(r => {
       if(r.ok){
         r.json()
@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   const unlockHouses = () => {
-    fetch('/houses')
+    fetch('http://127.0.0.1:3000/houses')
     .then(r => r.json())
     .then(data => setHouses(data))
     }

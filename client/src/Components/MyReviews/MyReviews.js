@@ -10,7 +10,7 @@ function MyReviews({ user, houses }) {
   const [starEditInput, setStarEditInput] = useState("");
 
   useEffect(() => {
-    fetch(`/reviews/by_user/${user.id}`)
+    fetch(`http://127.0.0.1:3000/reviews/by_user/${user.id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data))
   },[user.id])

@@ -27,7 +27,7 @@ function SignUpForm({setUser, setIsAuthenticated}) {
       alert("Passwords dont' match!")
     }
 
-    fetch('/users',{
+    fetch('http://127.0.0.1:3000/users',{
       method:'POST',
       headers:{
         'Content-Type': 'application/json',
